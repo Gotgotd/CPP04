@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:41:52 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/18 11:06:08 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:32:09 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,29 @@
 
 int	main() {
 
-const Animal*	meta = new Animal();
-const Animal*	j = new Dog();
-const Animal*	i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); 
-j->makeSound();
-meta->makeSound();
+Animal*	puppyMill[10];
+int		i;
 
-delete meta;
-delete j;
-delete i;
+for (int i = 0; i < 10; i++) {
+	if (i < 5)
+		puppyMill[i] = new Dog();
+	else if (i >= 5)
+		puppyMill[i] = new Cat();
+}
 
-std::cout << "------/ WRONGCAT TESTS /--------" << std::endl;
+for (i = 0; i < 10; i++) {
+	delete puppyMill[i];
+}
 
-const WrongAnimal*	wrongMeta = new WrongAnimal();
-const WrongAnimal*	anotherCat = new WrongCat();
+std::cout << std::endl;
+Dog medor;
 
-std::cout << wrongMeta->getType() << " " << std::endl;
-std::cout << anotherCat->getType() << " " << std::endl;
-wrongMeta->makeSound(); 
-anotherCat->makeSound();
+medor.getBrain()->ideas[0] = "I should eat this unwatched leftover...";
+std::cout << "Medor new idea : " << medor.getBrain()->ideas[0] << std::endl;
 
-delete wrongMeta;
-delete anotherCat;
+Dog medorFriend = medor;
+std::cout << "medor's friend idea : " << medorFriend.getBrain()->ideas[0] << std::endl;
+
 
 return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:55:47 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/18 12:00:24 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:04:38 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 
 class Brain {
 	
-	private:
-	std::string	ideas[100];	
-
 	public:
 	Brain();
+	Brain(Brain const & copy);
 	~Brain();
+
+	Brain&	operator=(Brain const & rhs);
+
+	std::string	ideas[100];	
 };
 
 #endif

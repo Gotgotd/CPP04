@@ -1,4 +1,4 @@
-NAME = Animals
+NAME = Animals01
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 OBJ_DIR = obj/

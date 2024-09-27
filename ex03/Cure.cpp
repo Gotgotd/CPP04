@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:55:56 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/25 15:54:42 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:58:12 by gautier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Cure.hpp"
 
-Cure::Cure(): AMateria("Cure") {
-	std::cout << "Cure default constructor called" << std::endl;
+Cure::Cure(): AMateria("cure") {
+	//std::cout << "Cure default constructor called" << std::endl;
 }
 
 Cure::Cure(Cure const & copy): AMateria("Cure") {
-	std::cout << "Cure copy constructor called" << std::endl;
+	//std::cout << "Cure copy constructor called" << std::endl;
 	*this=copy;
 }
 
 Cure::~Cure() {
-	std::cout << "Cure destructor called" << std::endl;
+	//std::cout << "Cure destructor called" << std::endl;
 }
 
 Cure&	Cure::operator=(Cure const & rhs) {

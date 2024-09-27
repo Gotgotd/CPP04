@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:25:55 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/25 15:48:54 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:53:20 by gautier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class ICharacter {
 	virtual void	equip(AMateria* m) = 0;
 	virtual void	unequip(int idx) = 0;
 	virtual void	use(int idx, ICharacter& target) = 0;
+	virtual	void	displayItems() const = 0;
 
 };
 

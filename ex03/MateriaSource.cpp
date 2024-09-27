@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:03:48 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/25 16:07:17 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:37:31 by gautier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() {
-	std::cout << "MateriaSource default constructor called" << std::endl;
+	//std::cout << "MateriaSource default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		MateriaSrc[i] = NULL;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & copy) {
-	std::cout << "MateriaSource copy constructor called" << std::endl;
+	//std::cout << "MateriaSource copy constructor called" << std::endl;
 	*this=copy;
 }
 
@@ -47,10 +47,12 @@ void	MateriaSource::learnMateria(AMateria* m) {
 	if (!m)
 		return;
 	for (int i = 0; i < 4; i++) {
-		if (MateriaSrc[i] == NULL) {
+		if (!MateriaSrc[i]) {
 			MateriaSrc[i] = m->clone();
 			return;
 		}
+		if (i == 3)
+			std::cout << "This MateriaSource is full of Materia" << std::endl;
 	}
 }
 
@@ -61,4 +63,13 @@ AMateria*	MateriaSource::createMateria(std::string const & type) {
 			return (MateriaSrc[i]->clone());
 	}
 	return 0;
+}
+
+void MateriaSource::displayLearnedMaterias() const {
+    for (int i = 0; i < 4; i++) {
+        if (MateriaSrc[i] != nullptr)
+            std::cout << "MateriaSrc index " << i << " : " << MateriaSrc[i]->getType() << std::endl;
+        else
+            std::cout << "MateriaSrc index " << i << " : empty" << std::endl;
+    }
 }

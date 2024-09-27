@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:50:56 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/25 13:58:06 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:35:06 by gautier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class MateriaSource : public IMateriaSource {
 
 	void		learnMateria(AMateria*);
 	AMateria*	createMateria(std::string const & type);
+	void 		displayLearnedMaterias() const;
 
 };
 

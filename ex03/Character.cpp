@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:39:10 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/25 16:16:39 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:55:38 by gautier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Character.hpp"
 
 Character::Character() {
-	std::cout << "Character default constructor called" << std::endl;
+	//std::cout << "Character default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		items[i] = NULL;
 }
 
 Character::Character(std::string name) {
-	std::cout << "Character name constructor called" << std::endl;
+	//std::cout << "Character name constructor called" << std::endl;
 	_name = name;
 	for (int i = 0; i < 4; i++)
 		items[i] = NULL;
 }
 
 Character::Character(Character const & copy) {
-	std::cout << "Character copy constructor called" << std::endl;
+	//std::cout << "Character copy constructor called" << std::endl;
 	*this=copy;
 }
 
@@ -66,6 +66,8 @@ void	Character::equip(AMateria* m) {
 			items[i] = m;
 			return ;
 		}
+		if (i == 3)
+			std::cout << "This character has already 4 Materia items. Please unequip one first" << std::endl;
 	}
 }
 
@@ -80,4 +82,14 @@ void	Character::use(int idx, ICharacter& target) {
 	if (idx < 0 || idx >= 4 || !items[idx])
 		return ;
 	items[idx]->use(target);
+}
+
+void	Character::displayItems() const {
+
+	for (int i = 0; i < 4; i++) {
+		if (items[i])
+			std::cout << "item " << i << " : " << items[i]->getType() << std::endl;
+		else
+			std::cout << "item " << i << " : empty" << std::endl;
+	}
 }

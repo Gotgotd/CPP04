@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:41:52 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/19 15:32:09 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/10/01 11:32:01 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@
 
 int	main() {
 
-Animal*	puppyMill[10];
-int		i;
+std::cout << std::endl;
+const Animal*	meta = new Animal();
+const Animal*	j = new Dog();
+const Animal*	i = new Cat();
+std::cout << j->getType() << " " << std::endl;
+std::cout << i->getType() << " " << std::endl;
+i->makeSound(); 
+j->makeSound();
+meta->makeSound();
 
-for (int i = 0; i < 10; i++) {
-	if (i < 5)
-		puppyMill[i] = new Dog();
-	else if (i >= 5)
-		puppyMill[i] = new Cat();
-}
-
-for (i = 0; i < 10; i++) {
-	delete puppyMill[i];
-}
+delete i;
+delete j;
+delete meta;
 
 std::cout << std::endl;
 Dog medor;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:39:10 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/27 10:55:38 by gautier          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:37:24 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ Character::Character() {
 		items[i] = NULL;
 }
 
-Character::Character(std::string name) {
+Character::Character(std::string name): _name(name) {
 	//std::cout << "Character name constructor called" << std::endl;
-	_name = name;
 	for (int i = 0; i < 4; i++)
 		items[i] = NULL;
 }

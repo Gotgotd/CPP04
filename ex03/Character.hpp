@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:39:16 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/27 10:53:20 by gautier          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:37:26 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include "ICharacter.hpp"
 
 class Character : public ICharacter {
+
+	protected:
+
+	std::string	_name;
 
 	public:
 	AMateria* items[4];

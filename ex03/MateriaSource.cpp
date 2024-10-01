@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:03:48 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/27 10:37:31 by gautier          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:30:43 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ AMateria*	MateriaSource::createMateria(std::string const & type) {
 
 void MateriaSource::displayLearnedMaterias() const {
     for (int i = 0; i < 4; i++) {
-        if (MateriaSrc[i] != nullptr)
+        if (MateriaSrc[i])
             std::cout << "MateriaSrc index " << i << " : " << MateriaSrc[i]->getType() << std::endl;
         else
             std::cout << "MateriaSrc index " << i << " : empty" << std::endl;

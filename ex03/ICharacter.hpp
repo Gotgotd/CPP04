@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gautier <gautier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:25:55 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/27 10:53:20 by gautier          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:47:32 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 class AMateria;
 
 class ICharacter {
-
-	protected:
-
-	std::string	_name;
 
 	public:
 
